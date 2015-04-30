@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="title"></title>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+    <style>
+        .main {
+            padding: 15px
+        }
+        .sub-title {
+            font-size: 1.5em;
+        }
+        .no-margin-bottom {
+            margin-bottom: 0 !important;
+        }
+        h4 {
+            font-size: 2.8em;
+        }
+        h5 {
+            font-size: 1.8em;
+        }
+        .option-btn {
+            margin-top: -20px;
+        }
+        .app-detail {
+            margin-top: -20px;
+        }
+        #app-header {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body class="brown lighten-5">
+    <div class="main">
+        <div class="media" style="min-width: 400px">
+            <div class="row no-margin-bottom">
+                <div class="col s2">
+                    <img src="../img/64.png" id="popup_page" class="left circle" alt="GPP">
+                </div>
+                <div class="col s9 app-detail" id="app-header">
+                        <h4 class="left blue-grey-text darken-5 no-margin-bottom">Github++ <span id="gpp-version"></span></h4>
+                        <h5 class="grey-text lighten-4 left no-margin-bottom sub-title">A Github Enhancement Toolkit</h5>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h5 class="deep-orange-text lighten-4"><i class="mdi-action-home"></i> Homepage: <a id="homepage" href="http://chatpp.thangtd.com">http://gpp.thangtd.com</a></h5>
+                <h5 class="deep-orange-text lighten-4"><i class="mdi-communication-quick-contacts-mail"></i> Author: <span class="title"><a href="https://thangtd.com">Tran Duc Thang</a></span></h5>
+                <h5 class="deep-orange-text lighten-4"><i class="mdi-action-stars"></i> Love this extension ? <span class="title"><a href="https://github.com/wataridori/gpp">Rate now :)</a></span></h5>
+                <h5 class="deep-orange-text lighten-4">
+                    <span class="left">
+                        <i class="mdi-social-group-add"></i> Contribute: <span class="title"><a href="https://github.com/wataridori/gpp">Github</a></span>
+                    </span>
+                    <a class="btn-floating btn-large waves-effect waves-light red right" id="option-btn"><i class="mdi-action-settings"></i></a>
+                </h5>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

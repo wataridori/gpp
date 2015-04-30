@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title id="title"></title>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/option.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/option.css">
+</head>
+<body class="brown lighten-5">
+<div class="container">
+    <div class="row">
+        <div class="col s2">
+            <img src="../img/128.png" class="left circle" alt="GPP">
+        </div>
+        <div class="col s9 app-detail" id="app-header">
+            <div class="row no-margin-bottom">
+                <h4 class="left blue-grey-text darken-5 no-margin-bottom">Github++ <span id="gpp-version"></span></h4>
+            </div>
+            <div class="row">
+                <h5 class="grey-text lighten-4 left no-margin-bottom sub-title">A Github Enhancement Toolkit</h5>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <h3 class="deep-orange-text text-lighten-2 center-align">Add new Project</h3>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s3">
+                    <input id="project-name" type="text" class="validate">
+                    <label for="project-name">Project name</label>
+                </div>
+                <div class="input-field col s7">
+                    <input id="project-link" type="text" class="validate">
+                    <label for="project-link">Project Base Link (Redmine, Asana ...)</label>
+                </div>
+                <div class="col s2">
+                    <button class="btn waves-effect waves-light" id="save-btn">Save
+                        <i class="mdi-content-send right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <h3 class="deep-orange-text text-lighten-2 center-align">Project list</h3>
+        <div class="col s12">
+            <table class="responsive-table bordered hoverable" id="table-data">
+                <thead>
+                <tr class="blue-text text-darken-3">
+                    <th data-field="id">Project Name</th>
+                    <th data-field="name">Project Base Link</th>
+                    <th data-field="price">Action</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
