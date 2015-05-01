@@ -1,49 +1,120 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
     <title>Gpp by wataridori</title>
-  </head>
+</head>
 
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Gpp</h1>
-        <h2>Github Plus Plus - A Github Enhancement Toolkit</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/wataridori/gpp/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/wataridori/gpp/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/wataridori/gpp" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
+<body class="brown lighten-5">
+<header></header>
+<main>
     <div class="container">
-      <section id="main_content">
-        <h1>
-<a id="-gpp" class="anchor" href="#-gpp" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<img src="./src/img/32.png" alt="Github++"> GPP</h1>
-      </section>
+        <div class="row no-margin-bottom">
+            <div class="col s2">
+                <img src="img/128.png" class="left circle" alt="GPP">
+            </div>
+            <div class="col s9 app-detail center center-align" id="app-header">
+                <div class="row no-margin-bottom">
+                    <h2 class="blue-grey-text darken-5">Github++ <span id="gpp-version"></span></h2>
+                </div>
+                <div class="row no-margin-bottom">
+                    <h5 class="grey-text lighten-4">A Github Enhancement Toolkit</h5>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <section id="main-contain">
+            <div class="row">
+                <div class="col s12 z-depth-1">
+                    <div class="card-panel blue-grey darken-2 white-text">
+                        <h4>Features</h4>
+                        <hr>
+                        <ul>
+                            <li><i class="mdi-navigation-check teal"></i> Easily config Github project with redmine, asana ... link. </li>
+                            <li><i class="mdi-navigation-check teal"></i> All user data is synced via Google account. </li>
+                            <li><i class="mdi-navigation-check teal"></i> Parse ticket link inside the Commit name, Pull Request name ...</li>
+                            <li><i class="mdi-navigation-check teal"></i> Funny Emoticons (Coming Soon ...)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 z-depth-1">
+                    <div class="card-panel blue-grey darken-2 white-text">
+                        <h4>Install</h4>
+                        <hr>
+                        <section id="downloads" class="center">
+                            <a href="" class="btn" target="_blank">View on Chrome Store</a>
+                            <a href="https://github.com/wataridori/gpp/zipball/master" target="_blank" class="btn">Download as .zip</a>
+                        </section>
+                        <ul>
+                            <li><i class="mdi-navigation-check teal"></i> You can download and install GPP via the <a href="" target="_blank">Google Chrome Web Store</a>!  </li>
+                            <li><i class="mdi-navigation-check teal"></i> If you can not install GPP from Chrome App Store, then you can try to install it from the source code.<br>
+                                Just click the DOWNLOAD button above, extract the zip file. After that, go to chrome://extensions/ page, turn on Developer Mode then click Load Unpacked Extension button.<br>
+                                Finally, refer to the folder named src, which is inside the folder that you just have extracted.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 z-depth-1">
+                    <div class="card-panel blue-grey darken-2 white-text">
+                        <h4>Contributing</h4>
+                        <hr>
+                        Read the <a href="https://github.com/wataridori/gpp/blob/master/CONTRIBUTING.md">Contribution Guidelines</a>
+                        first, and then create new issues or new pull requests. <br>
+                        Contributions are always welcome & appreciated!.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="center white-text">
+            <h5 class="text-center">
+                <a href="https://github.com/wataridori/chatwork-sdk">GPP</a>
+                is maintained by
+                <a href="https://github.com/wataridori"><img src="https://avatars2.githubusercontent.com/u/1189893?v=3&amp;s=60" class="avatar"></a>
+                <a href="https://github.com/wataridori">wataridori</a>
+            </h5>
+        </div>
     </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-59804561-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2015. Github logo is registered trademarks of Github.
+            <a class="grey-text text-lighten-4 right" href="https://thangtd.com"><i class="mdi-action-home small"></i></a>
+        </div>
+    </div>
+</footer>
 
-  </body>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59804561-2', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
 </html>
