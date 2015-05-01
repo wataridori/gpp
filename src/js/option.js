@@ -36,7 +36,7 @@ function GppOption() {
         var sync = {};
         sync[CHROME_SYNC_KEY] = projectData;
         chrome.storage.sync.set(sync, function() {
-            if (typeof callback != 'undefined') {
+            if (typeof callback !== 'undefined') {
                 callback();
             }
         });
@@ -45,8 +45,8 @@ function GppOption() {
     me.handleOnSave = function() {
         var projectNameDom = $('#project-name');
         var projectLinkDom = $('#project-link');
-        var name = projectNameDom.val();
-        var link = projectLinkDom.val();
+        var name = projectNameDom.val().trim();
+        var link = projectLinkDom.val().trim();
         if (name && link) {
             if (!me.validateUrl(link)) {
                 return void $('#modal').openModal();
@@ -74,7 +74,7 @@ function GppOption() {
     };
 
     me.validateUrl = function(url) {
-        var regexp = /(https|http):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+        var regexp = /(https|http):\/\/(\w+:?\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
         return regexp.test(url);
     };
 }
