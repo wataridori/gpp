@@ -1,40 +1,80 @@
+var GPP_DATA = 'GPP_DATA_LOCAL_STORAGE';
+
 function GPP() {
-    var gpp = this;
+    var me = this;
     var regex = /#([0-9]+) /g;
     var issueTitleClasses = ['.issue-title-link', '.js-issue-title'];
-    var redmineLink = 'http://dev.framgia.com/redmine/issues/';
+    var projectData = {};
+    var currentProject = [];
 
-    gpp.init = function() {
-        gpp.checkTitle();
+    me.init = function() {
+        if (localStorage[GPP_DATA] !== undefined) {
+            var data = JSON.parse(localStorage[GPP_DATA]);
+            if (!$.isEmptyObject(data)) {
+                projectData = data;
+            }
+        }
+
+        me.parseTicket();
         $(document).on("pjax:end", function() {
-            gpp.checkTitle();
+            me.parseTicket();
         })
     };
 
-    gpp.checkTitle = function () {
+    me.getCurrentProject = function() {
+        var project = $('.js-current-repository').attr('href');
+        if (project) {
+            currentProject = project.split('/');
+            if (!currentProject[0]) {
+                currentProject.shift();
+            }
+        }
+    };
+
+    me.checkCurrentProject = function() {
+        for (var name in projectData) {
+            var currentProjectName = currentProject[1] || null;
+            if (name.indexOf('/') > 0) {
+                currentProjectName = currentProject.join('/');
+            }
+            if (name === currentProjectName) {
+                return name;
+            }
+        }
+
+        return null;
+    };
+
+    me.parseTicket = function () {
+        me.getCurrentProject();
+        var name = me.checkCurrentProject();
+        if (!name) {
+            return;
+        }
+
         for (var i in issueTitleClasses) {
             $(issueTitleClasses[i]).each(function() {
-                gpp.parseTicketLink($(this));
+                me.parseTicketLink($(this), projectData[name]);
             });
         }
     };
 
-    gpp.parseTicketLink = function(dom) {
+    me.parseTicketLink = function(dom, baseLink) {
         var text = dom.text();
         var matches = text.match(regex);
         if (matches) {
             for (var i in matches) {
                 var match = matches[i];
-                var link = gpp.generateTicketLink(match);
+                var link = me.generateTicketLink(match, baseLink);
                 text = text.replace(match, link);
             }
             dom.html(text);
         }
     };
 
-    gpp.generateTicketLink = function(ticket) {
+    me.generateTicketLink = function(ticket, baseLink) {
         var ticketNumber = ticket.replace(/#|\s/g, '');
-        var link = redmineLink + ticketNumber;
+        var link = baseLink + ticketNumber;
         return '<a href="' + link + '" target="_blank">' + ticket + '</a>';
     }
 }

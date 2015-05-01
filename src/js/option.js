@@ -1,6 +1,15 @@
+var CHROME_SYNC_KEY = 'GPP_CHROME_SYNC_KEY';
+
 function GppOption() {
     var me = this;
-    var projectData = [];
+    var projectData = {};
+
+    chrome.storage.sync.get(CHROME_SYNC_KEY, function(info) {
+        if (!$.isEmptyObject(info)) {
+            projectData = info[CHROME_SYNC_KEY];
+            me.fillTableData();
+        }
+    });
 
     me.init = function() {
         $('#project-name').focus();
@@ -19,7 +28,17 @@ function GppOption() {
         $('body').on('click', '.btn-data-remove', function() {
             var name = $(this).data('name');
             delete projectData[name];
-            me.fillTableData();
+            me.sync(me.fillTableData);
+        });
+    };
+
+    me.sync = function(callback) {
+        var sync = {};
+        sync[CHROME_SYNC_KEY] = projectData;
+        chrome.storage.sync.set(sync, function() {
+            if (typeof callback != 'undefined') {
+                callback();
+            }
         });
     };
 
@@ -29,8 +48,11 @@ function GppOption() {
         var name = projectNameDom.val();
         var link = projectLinkDom.val();
         if (name && link) {
+            if (!me.validateUrl(link)) {
+                return void $('#modal').openModal();
+            }
             projectData[name] = link;
-            me.fillTableData();
+            me.sync(me.fillTableData);
             projectNameDom.val('').focus();
             projectLinkDom.val('');
         }
@@ -49,7 +71,12 @@ function GppOption() {
             tableText += "</tr>";
         }
         tableBody.append(tableText);
-    }
+    };
+
+    me.validateUrl = function(url) {
+        var regexp = /(https|http):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+        return regexp.test(url);
+    };
 }
 
 $(function (){
