@@ -1,7 +1,7 @@
 {
     "name": "Github++",
     "short_name": "GPP",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "manifest_version": 2,
     "description": "A Github Enhancement Toolkit",
     "content_scripts": [
@@ -30,5 +30,5 @@
     "icons": {
         "64": "img/64.png"
     },
-    "homepage_url": "http://gpp.thangtd.com"
+    "homepage_url": "http://wataridori.github.io/gpp"
 }
