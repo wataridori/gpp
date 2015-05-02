@@ -28,11 +28,20 @@
 
     <div class="row">
         <h3 class="deep-orange-text text-lighten-2 center-align">Add new Project</h3>
+        <div class="blue-grey-text">
+            <p>■　GPP uses <span class="strong">Chrome Storage API</span> to sync your data via <span class="strong">Google Account</span>.</p>
+            <p>■　The maximum total amount of data that can be stored is <span class="strong">8KB</span>. So do not create too many projects.</p>
+            <p>■　The <span class="strong">"Github Repository Name"</span> can contain author name or not. For example, both <code>"wataridori/gpp"</code> and <code>"gpp"</code> are acceptable. <br>
+                If you use <code>"wataridori/gpp"</code> then only the <code>"gpp"</code> repository belongs to <code>"wataridori"</code> is parsed, otherwise,
+                if you use only <code>"gpp"</code>, then all the repositories named <code>"gpp"</code> will be the target.</p>
+            <p>■　The <span class="strong">"Project Base Link"</span> is the link before "ticket number". For example <a href="http://www.redmine.org/issues/">http://www.redmine.org/issues/</a></p>
+        </div>
+        <br>
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s3">
                     <input id="project-name" type="text" class="validate">
-                    <label for="project-name">Project name</label>
+                    <label for="project-name">Github Repository Name</label>
                 </div>
                 <div class="input-field col s7">
                     <input id="project-link" type="text" class="validate">
@@ -50,7 +59,7 @@
             <table class="responsive-table bordered hoverable" id="table-data">
                 <thead>
                 <tr class="blue-text text-darken-3">
-                    <th data-field="id">Project Name</th>
+                    <th data-field="id">Github Repository Name</th>
                     <th data-field="name">Project Base Link</th>
                     <th data-field="price">Action</th>
                 </tr>

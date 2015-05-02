@@ -9,3 +9,13 @@
 table {
     font-size: 1.5em;
 }
+
+p {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 3px;
+}
+
+.strong {
+    font-weight: bold;
+}
