@@ -51,6 +51,9 @@ function GppOption() {
             if (!me.validateUrl(link)) {
                 return void $('#modal').openModal();
             }
+            if (link.substr(-1, 1) !== '/' ) {
+                link += '/';
+            }
             projectData[name] = link;
             me.sync(me.fillTableData);
             projectNameDom.val('').focus();
