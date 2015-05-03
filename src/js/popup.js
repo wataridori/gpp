@@ -5,10 +5,9 @@ $(function() {
     var appDetail = chrome.app.getDetails();
     var version = appDetail.version;
     var appName = appDetail.name;
+    var versionName = VERSION_NAME_RELEASE;
     if (isDevVersion(appName)) {
-        var versionName = VERSION_NAME_DEV;
-    } else {
-        var versionName = VERSION_NAME_RELEASE;
+        versionName = VERSION_NAME_DEV;
     }
 
     $('#gpp-version').html(version + ' ' + versionName);
