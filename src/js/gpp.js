@@ -24,15 +24,10 @@ function GPP() {
     };
 
     me.getCurrentProject = function() {
-        var project = $('.js-current-repository').attr('href');
-        if (project) {
-            currentProject = project.split('/');
-            if (!currentProject[0]) {
-                currentProject.shift();
-            }
-        } else {
-            currentProject = [];
-        }
+        currentProject = [];
+        $('.entry-title a').each(function() {
+            currentProject.push($(this).text());
+        });
     };
 
     me.checkCurrentProject = function() {
